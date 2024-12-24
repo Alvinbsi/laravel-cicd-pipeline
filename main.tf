@@ -6,7 +6,7 @@ provider "helm" {
 
 resource "helm_release" "laravel" {
   name       = "laravel-app"
-  chart      = "./laravel-cicd"
+  chart      = "."
   namespace  = "default"
 
   values = [
