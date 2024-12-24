@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/laravel-chart.git'
+                git 'https://github.com/Alvinbsi/laravel-cicd-pipeline.git'
             }
         }
         stage('Terraform Init') {
@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Helm Deploy') {
             steps {
-                sh 'helm upgrade --install laravel-app ./laravel-chart'
+                sh 'helm upgrade --install laravel-app ./laravel-cicd-pipeline'
             }
         }
     }
