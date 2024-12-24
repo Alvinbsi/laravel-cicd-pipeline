@@ -1,0 +1,12 @@
+app:
+  image: laravel:latest
+  replicas: 2
+db:
+  host: laravel-db
+  user: laravel_user
+  password: laravel_password
+  database: laravel_db
+
+service:
+  type: LoadBalancer
+  port: 80

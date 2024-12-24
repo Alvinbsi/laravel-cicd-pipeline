@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel
+spec:
+  replicas: {{ .Values.app.replicas }}
+  selector:
+    matchLabels:
+      app: laravel
+  template:
+    metadata:
+      labels:
+        app: laravel
+    spec:
+      containers:
+      - name: laravel
+        image: {{ .Values.app.image }}
+        ports:
+        - containerPort: 80
+        env:
+        - name: DB_HOST
+          value: {{ .Values.db.host }}
+        - name: DB_USER
+          value: {{ .Values.db.user }}
+        - name: DB_PASSWORD
+          value: {{ .Values.db.password }}
+        - name: DB_NAME
+          value: {{ .Values.db.database }}

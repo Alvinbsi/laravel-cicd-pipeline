@@ -1,0 +1,4 @@
+apiVersion: v2
+name: laravel
+description: A Helm chart for Laravel application
+version: 1.0.0
